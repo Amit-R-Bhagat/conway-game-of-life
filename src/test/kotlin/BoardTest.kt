@@ -10,7 +10,7 @@ class BoardTest {
         cellList.add(Cell(0, 1, false))
         val board = Board(1, 2, cellList)
 
-        board.updateBoard()
+        board.play()
 
         assertEquals(false, board.getCellList()[0].isAlive())
 
@@ -28,7 +28,7 @@ class BoardTest {
         cellList.add(Cell(1, 2, true))
         val board = Board(2, 3, cellList)
 
-        board.updateBoard()
+        board.play()
 
         assertEquals(false, board.getCellList()[1].isAlive())
 
@@ -45,7 +45,7 @@ class BoardTest {
         cellList.add(Cell(1, 2, true))
         val board = Board(2, 3, cellList)
 
-        board.updateBoard()
+        board.play()
 
         assertEquals(false, board.getCellList()[1].isAlive())
 
@@ -62,7 +62,7 @@ class BoardTest {
         cellList.add(Cell(1, 2, true))
         val board = Board(2, 3, cellList)
 
-        board.updateBoard()
+        board.play()
 
         assertEquals(false, board.getCellList()[1].isAlive())
 
@@ -80,7 +80,7 @@ class BoardTest {
         cellList.add(Cell(1, 2, true))
         val board = Board(2, 3, cellList)
 
-        board.updateBoard()
+        board.play()
 
         assertEquals(true, board.getCellList()[0].isAlive())
 
