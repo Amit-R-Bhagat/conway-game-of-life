@@ -12,8 +12,7 @@ class Cell(private val rowNumber: Int, private val colNumber: Int, private var l
     }
 
     fun toggleLiving(): Boolean {
-        living = !living
-        return living
+        return !living
     }
 
 }

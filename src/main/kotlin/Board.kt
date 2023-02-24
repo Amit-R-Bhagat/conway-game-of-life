@@ -1,15 +1,20 @@
 class Board(private val numberOfRows: Int, private val numberOfCols: Int, private val cellList: ArrayList<Cell>) {
+    private val newCellList: ArrayList<Cell> = ArrayList()
 
     fun updateBoard() {
         for (cell in cellList) {
             val numberOfNeighbours = getNumberOfNeighbours(cell.getRowNumber(), cell.getColNumber())
             if (cell.isAlive()) {
                 if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
-                    cell.toggleLiving()
+                    newCellList.add(Cell(cell.getRowNumber(), cell.getColNumber(), cell.toggleLiving()))
+                }else{
+                    newCellList.add(Cell(cell.getRowNumber(), cell.getColNumber(), cell.isAlive()))
                 }
             } else {
                 if (numberOfNeighbours == 3) {
-                    cell.toggleLiving()
+                    newCellList.add(Cell(cell.getRowNumber(), cell.getColNumber(), cell.toggleLiving()))
+                }else{
+                    newCellList.add(Cell(cell.getRowNumber(), cell.getColNumber(), cell.isAlive()))
                 }
             }
         }
@@ -42,7 +47,7 @@ class Board(private val numberOfRows: Int, private val numberOfCols: Int, privat
     }
 
     fun getCellList(): ArrayList<Cell> {
-        return cellList
+        return newCellList
     }
 
 }

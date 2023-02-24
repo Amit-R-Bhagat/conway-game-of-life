@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3adcc20-f552-403a-9b0a-a4b250664ba8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/BoardTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/CellTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Board.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Board.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Cell.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Cell.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/BoardTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/BoardTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CellTest">
+  <component name="RunManager" selected="Gradle.BoardTest">
     <configuration name="BoardTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -113,9 +113,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.CellTest" />
         <item itemvalue="Gradle.BoardTest" />
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Gradle.CellTest" />
       </list>
     </recent_temporary>
   </component>

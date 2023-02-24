@@ -1,14 +1,15 @@
 fun main() {
-    val numberOfRows = 4
-    val numberOfCols = 4
+    val numberOfRows = 2
+    val numberOfCols = 3
     val numberOfGenerations = 1
 
 
-    val board = Board(numberOfRows, numberOfCols, createCellListFromInput(numberOfRows))
+    var board = Board(numberOfRows, numberOfCols, createCellListFromInput(numberOfRows))
     for (generation in 0 until numberOfGenerations) {
         board.updateBoard()
+        printBoard(board.getCellList(), numberOfCols)
+        board = Board(numberOfRows, numberOfCols, board.getCellList())
     }
-    printBoard(board.getCellList(), numberOfCols)
 }
 
 private fun createCellListFromInput(numberOfRows: Int): ArrayList<Cell> {
