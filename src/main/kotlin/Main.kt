@@ -6,7 +6,7 @@ fun main() {
 
     var board = Board(numberOfRows, numberOfCols, createCellListFromInput(numberOfRows))
     for (generation in 0 until numberOfGenerations) {
-        var newCellList = board.play()
+        val newCellList = board.play()
         printBoard(newCellList, numberOfCols)
         board = Board(numberOfRows, numberOfCols, newCellList)
     }

@@ -5,7 +5,8 @@ class Board(private val numberOfRows: Int, private val numberOfCols: Int, privat
         for (cell in cellList) {
             val numberOfNeighbours = getNumberOfAliveNeighbours(cell.getRowNumber(), cell.getColNumber())
             if ((cell.isAlive() && numberOfNeighbours < 2 || numberOfNeighbours > 3)
-                || (!cell.isAlive() && numberOfNeighbours == 3)) {
+                || (!cell.isAlive() && numberOfNeighbours == 3)
+            ) {
                 newCellList.add(Cell(cell.getRowNumber(), cell.getColNumber(), cell.toggleLiving()))
             } else {
                 newCellList.add(Cell(cell.getRowNumber(), cell.getColNumber(), cell.isAlive()))
@@ -39,9 +40,4 @@ class Board(private val numberOfRows: Int, private val numberOfCols: Int, privat
         if (rowNumber < 0 || rowNumber >= numberOfRows || colNumber >= numberOfCols || colNumber < 0) return false
         return true
     }
-
-    fun getCellList(): ArrayList<Cell> {
-        return newCellList
-    }
-
 }
