@@ -1,21 +1,7 @@
-class Board(private val numberOfRows: Int, private val numberOfCols: Int) {
-    private var board: ArrayList<Cell> = ArrayList()
-
-    init {
-        for (row in 0 until numberOfRows) {
-            val inputRow = readln().split(' ')
-            for ((col, input) in inputRow.withIndex()) {
-                if (input.toInt() == 1) {
-                    board.add(Cell(row, col, true))
-                } else {
-                    board.add(Cell(row, col, false))
-                }
-            }
-        }
-    }
+class Board(private val numberOfRows: Int, private val numberOfCols: Int, private val cellList: ArrayList<Cell>) {
 
     fun updateBoard() {
-        for (cell in board) {
+        for (cell in cellList) {
             val numberOfNeighbours = getNumberOfNeighbours(cell.getRowNumber(), cell.getColNumber())
             if (cell.isAlive()) {
                 if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
@@ -26,8 +12,6 @@ class Board(private val numberOfRows: Int, private val numberOfCols: Int) {
                     cell.toggleLiving()
                 }
             }
-//            println("$numberOfNeighbours ${cell.getRowNumber()} ${cell.getColNumber()} ${cell.isAlive()} ${cell.toggleLiving()}")
-
         }
     }
 
@@ -45,7 +29,7 @@ class Board(private val numberOfRows: Int, private val numberOfCols: Int) {
 
                 if (isExist(row, col)) {
 
-                    if (board[row * numberOfRows + col].isAlive()) neighbourCount++
+                    if (cellList[row * numberOfRows + col].isAlive()) neighbourCount++
                 }
             }
         }
@@ -57,8 +41,8 @@ class Board(private val numberOfRows: Int, private val numberOfCols: Int) {
         return true
     }
 
-    fun getBoard(): ArrayList<Cell> {
-        return board
+    fun getCellList(): ArrayList<Cell> {
+        return cellList
     }
 
 }
