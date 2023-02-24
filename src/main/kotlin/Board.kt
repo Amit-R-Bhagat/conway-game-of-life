@@ -1,7 +1,7 @@
 class Board(private val numberOfRows: Int, private val numberOfCols: Int, private val cellList: ArrayList<Cell>) {
     private val newCellList: ArrayList<Cell> = ArrayList()
 
-    fun play() {
+    fun play(): ArrayList<Cell> {
         for (cell in cellList) {
             val numberOfNeighbours = getNumberOfAliveNeighbours(cell.getRowNumber(), cell.getColNumber())
             if ((cell.isAlive() && numberOfNeighbours < 2 || numberOfNeighbours > 3)
@@ -11,6 +11,8 @@ class Board(private val numberOfRows: Int, private val numberOfCols: Int, privat
                 newCellList.add(Cell(cell.getRowNumber(), cell.getColNumber(), cell.isAlive()))
             }
         }
+
+        return newCellList
     }
 
     private fun getNumberOfAliveNeighbours(rowNumber: Int, colNumber: Int): Int {
