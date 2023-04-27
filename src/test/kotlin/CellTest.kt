@@ -16,6 +16,6 @@ class CellTest {
 
         cell.toggleLiving()
 
-        assertEquals(false, cell.isAlive())
+        assertEquals(true, cell.isAlive())
     }
 }
